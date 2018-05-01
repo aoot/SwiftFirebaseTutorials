@@ -9,10 +9,10 @@
 import UIKit
 import Firebase
 
-let primaryColor = UIColor(red: 210/255, green: 109/255, blue: 180/255, alpha: 1)
-let secondaryColor = UIColor(red: 52/255, green: 148/255, blue: 230/255, alpha: 1)
+let primaryColor = UIColor(red: 210/255, green: 109/255, blue: 180/255, alpha: 1)   // RGB is easier than hex in xcode
+let secondaryColor = UIColor(red: 52/255, green: 148/255, blue: 230/255, alpha: 1)  // RGB is easier than hex in xcode
 
-@UIApplicationMain
+@UIApplicationMain  // Q: What is this?
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -28,12 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             if user != nil {
-                //
+                // Logged in page
                 let controller = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
                 self.window?.rootViewController = controller
                 self.window?.makeKeyAndVisible()
             } else {
-                // menu screen
+                // menu screen for signing in or up
                 let controller = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
                 self.window?.rootViewController = controller
                 self.window?.makeKeyAndVisible()
